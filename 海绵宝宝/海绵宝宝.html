@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: #f7e948;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .face{
+            position: relative;
+        }
+        .eyes{
+            position: relative;
+            display: flex;
+        }
+        .eyes .eye{
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background-color: #fff;
+            border-radius: 50%;
+            border: 1px solid #333;
+        }
+        .eyes .eye::before{
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 50%;
+            left: 40%;
+            background: #26b9cb;
+            border-radius: 50%;
+            border: 1px solid #333;
+            transform: translate(-50%,-50%);
+        }
+        .eyes .eye::after{
+            content: '';
+            position: absolute;
+            top: 40%;
+            left: 27%;
+            width: 30px;
+            height: 30px;
+            background-color: #0457a0;
+            border-radius: 50%;
+        }
+        .eyelash_left{
+            position: relative;
+            top: -180px;
+            left: 70px;
+            width: 5px;
+            height: 35px;
+            background-color: #000;
+            border-radius: 50%;
+            border-right: 3px solid transparent;
+            border-top: 3px solid transparent;
+        }
+        .eyelash_left::before{
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: -50px;
+            width: 5px;
+            height: 35px;
+            background: #000;
+            transform: rotate(-35deg);
+            border-radius: 50%;
+            border-right: 3px solid transparent;
+            border-top: 3px solid transparent;
+        }
+        .eyelash_left::after{
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50px;
+            width: 5px;
+            height: 35px;
+            background: #000;
+            transform: rotate(35deg);
+            border-radius: 50%;
+            border-right: 3px solid transparent;
+            border-top: 3px solid transparent;
+        }
+        .eyelash_right{
+            position: relative;
+            top: -220px;
+            left: 220px;
+            width: 5px;
+            height: 35px;
+            background-color: #000;
+            border-radius: 50%;
+            border-right: 3px solid transparent;
+            border-top: 3px solid transparent;
+        }
+        .eyelash_right::before{
+            content: '';
+            position: absolute;
+            top: 14px;
+            left:-50px;
+            width: 5px;
+            height: 35px;
+            background: #000;
+            transform: rotate(-35deg);
+            border-radius: 50%;
+            border-right: 3px solid transparent;
+            border-top: 3px solid transparent;
+        }
+        .eyelash_right::after{
+            content: '';
+            position: absolute;
+            top: 10px;
+            left:50px;
+            width: 5px;
+            height: 35px;
+            background: #000;
+            transform: rotate(35deg);
+            border-radius: 50%;
+            border-right: 3px solid transparent;
+            border-top: 3px solid transparent;
+        }
+        .nose{
+            position: relative;
+            top: -150px;
+            left: 120px;
+            width: 50px;
+            height: 80px;
+            border: 1px solid #555;
+            background: #f7e948;
+            border-radius: 50%;
+            border-bottom: 1px solid transparent;
+        }
+        /* .nose::before{
+            content: '';
+            position: absolute;
+            top: 65px;
+            left: 7px;
+            width: 30px;
+            height: 30px;
+            background-color: #f7e948;
+            border-radius: 40%;
+        } */
+        .nose:after{
+            content:'';
+            position: absolute;
+            top:-60px;
+            left:-160px;
+            width:13px;
+            height:13px;
+            background-color: #aead0d;
+            border-radius:40%;
+        }
+        .cheek_left{
+            position: relative;
+            top: -100px;
+            left: 20px;
+            width: 15px;
+            height: 15px;
+            background: #ed7f8c;
+            border-radius: 50%;
+        }
+        .cheek_left::before{
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 30px;
+            width: 15px;
+            height: 15px;
+            background: #ed7f8c;
+            border-radius: 50%;
+        }
+        .cheek_left::after{
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 40px;
+            width: 15px;
+            height: 15px;
+            background: #ed7f8c;
+            border-radius: 50%;
+        }
+        .cheek_right{
+            position: relative;
+            top: -100px;
+            left: 230px;
+            width: 15px;
+            height: 15px;
+            background: #ed7f8c;
+            border-radius: 50%;
+        }
+        .cheek_right::before{
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: 22px;
+            width: 15px;
+            height: 15px;
+            background: #ed7f8c;
+            border-radius: 50%;
+        }
+        .cheek_right::after{
+            content: '';
+            position: absolute;
+            top: -7px;
+            left: 42px;
+            width: 15px;
+            height: 15px;
+            background: #ed7f8c;
+            border-radius: 50%;
+        }
+        .mouth1{
+            position: relative;
+            top: -70px;
+            left: 80px;
+            width: 140px;
+            height: 40px;
+            border-top: 3px solid #333;
+            border-radius: 50%;
+            transition: .5s;
+        }
+        .face:hover .mouth1{
+            border-top: 0;
+            border-bottom: 3px solid #333;
+            top: -85px;
+            transform: rotate(0);
+        }
+        .mouth1::before{
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 30px;
+            width: 35px;
+            height: 33px;
+            border: 2px solid #333;
+            background-color: #fff;
+            transform: rotate(5deg);
+        }
+        .face:hover .mouth1::before{
+            top: 40px;
+            transform: rotate(0);
+        }
+        .mouth1::after{
+            content: '';
+            position: absolute;
+            top: 1px;
+            left: 80px;
+            width: 35px;
+            height: 35px;
+            border: 2px solid #333;
+            transform: rotate(2deg);
+            background-color: #fff;
+        }
+        .face:hover .mouth1::after{
+            top: 40px;
+            transform: rotate(0);
+        }
+        .mouth2{
+            position: relative;
+            top:-114px;
+            left:90px;
+        }
+        .mouth2:before{
+            content:'';
+            position: absolute; 
+            top:80px;
+            left:-20px;
+            width:80px;
+            height: 30px;
+            border-bottom:2px solid #ed7f8c;
+            border-radius: 50%;
+           
+        }
+        .mouth2:after{
+            content:'';
+            position: absolute;
+            top:80px;
+            left:65px;
+            width:70px;
+            height: 30px;
+            border-bottom:2px solid #ed7f8c;
+            border-radius: 50%;
+        }
+        .patch_left{
+            position: relative;
+            top: -100px;
+            left: -30px;
+            width: 40px;
+            height: 50px;
+            background-color: #aead0d;
+            border-radius: 50% 80% 40% 50%;
+            transform: rotate(10deg);
+        }
+        .patch_left::before{
+            content:'';
+            position: absolute;
+            top:-30px;
+            left:-20px;
+            width:20px;
+            height: 20px;
+            background-color: #aead0d;
+            border-radius: 60% 80% 50% 60% ;
+           
+        }
+        .patch_left::after{
+            content:'';
+            position: absolute;
+            top:-320px;
+            left:-50px;
+            width:20px;
+            height: 20px;
+            background-color: #aead0d;
+            transform: rotate(10deg);
+            border-radius: 60% 80% 50% 60% ;
+        }
+        .patch_right{
+            position: relative;
+            top: -160px;
+            left: 280px;
+            width: 40px;
+            height: 50px;
+            background-color: #aead0d;
+            border-radius: 40% 60% 60% 40%;
+            transform: rotate(180deg);
+        }
+        .patch_right::before{
+            content:'';
+            position: absolute;
+            top:70px;
+            left:-30px;
+            width:20px;
+            height: 20px;
+            background-color: #aead0d;
+            border-radius: 90% 80% 70% 60% ;
+        }
+        .patch_right::after{
+            content:'';
+            position: absolute;
+            top: 330px;
+            left:-30px;
+            width:20px;
+            height: 20px;
+            background-color: #aead0d;
+            border-radius: 90% 80% 70% 60% ;
+        }
+    </style>
+</head>
+<body>
+    <div class="face">
+        <div class="eyes">
+            <div class="eye"></div>
+            <div class="eye"></div>
+        </div>
+        <div class="eyelash_left"></div>
+        <div class="eyelash_right"></div>
+        <div class="nose"></div>
+        <div class="cheek_left"></div>
+        <div class="cheek_right"></div>
+        <div class="mouth1"></div>
+        <div class="mouth2"></div>
+        <div class="patch_left"></div>
+        <div class="patch_right"></div>
+    </div>
+    <script>
+        let body = document.querySelector('body');
+        body.addEventListener('mousemove',function(){
+            console.log(111);
+            let eye = document.querySelectorAll('.eye')
+            eye.forEach(function(eye){
+                let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
+                let y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
+                let hudu = Math.atan2(event.pageX - x,event.pageY - y);
+                let rot = (hudu * (180 / Math.PI) * -1) + 270;
+                console.log(rot);
+                eye.style.transform = "rotate("+ rot +"deg)";
+            })
+        });
+    </script>
+</body>
+</html>
