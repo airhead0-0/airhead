@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #cbc0d3;
+        }
+        .container{
+            position: relative;
+            margin: auto;
+            width: 650px;
+            height: 550px;
+        }
+        .welcome{
+            position: absolute;
+            background-color: #f6f6f6;
+            width: 650px;
+            height: 415px;
+            top: 25%;
+            border-radius: 5px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
+        }
+
+        .pinkbox{
+            /* display: none; */
+            position: absolute;
+            top: -10%;
+            left: 5%;
+            background: #eac7cc;
+            width: 320px;
+            height: 500px;
+            border-radius: 5px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, .1);
+            transition: all .5s ease-in-out;
+            z-index: 2;
+            transform: translateX();
+        }
+
+        .nodisplay{
+            display: none;
+            transition: all .5s ease;
+        }
+
+        .leftbox,.rightbox{
+            position: absolute;
+            width: 50%;
+            transition: 1s all ease;
+        }
+
+        .leftbox{
+            left: -2%;
+        }
+        .rightbox{
+            right: -2%;
+        }
+
+        h1{
+            font-family: "open Sans",sans-serif;
+            text-align: center;
+            margin-top: 95px;
+            text-transform: uppercase;
+            color: #f6f6f6;
+            font-size: 2em;
+            letter-spacing: 8px;
+        }
+
+        .title{
+            font-family: "Lora", serif;
+            color: #8e9aaf;
+            font-size: 1.8em;
+            letter-spacing: 3px;
+            text-align: center;
+            font-weight: 500;
+            margin-top: 20%;
+        }
+
+        .desc{
+            margin-top: 8px;
+        }
+
+        .account{
+            margin-top: 45%;
+            font-size: 10px;
+        }
+
+        p{
+            font-family: "Open Sans",sans-serif;
+            font-size: 0.7em;
+            letter-spacing: 2px;
+            color: #8e9aaf;
+            text-align: center;
+        }
+
+        span{
+            color: #eac7cc;
+        }
+
+        .flower{
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            top: 45%;
+            left: 32%;
+            opacity: .9;
+        }
+
+        .smaller{
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            top: 46%;
+            left: 32%;
+            opacity: .9;
+        }
+
+        button{
+            padding: 12px;
+            font-family: "Open Sans",sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 11px;
+            border-radius: 10px;
+            margin: auto;
+            outline: none;
+            display: block;
+        }
+        button:hover{
+            background: #eac7cc;
+            cursor: pointer;
+            color: #f6f6f6;
+            transition: background-color 1s ease-out;
+        }
+        .button{
+            margin-top: 3%;
+            background: #f6f6f6;
+            color: #ce7d88;
+        }
+
+        form{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 7px;
+        }
+        .more-padding{
+            padding-top: 35px;
+        }
+        .more-padding input{
+            padding: 12px;
+            outline: none;
+        }   
+
+        .more-padding .submit{
+            margin-top: 45px;
+        }
+        .submit{
+            margin-top: 25px;
+            padding: 12px;
+            border-color: #ce7d88;
+        }
+        .submit:hover{
+            background: #cbc0d3;
+            border-color: #bfb1c9;
+        }
+        
+        input{
+            background: #eac7cc;
+            width: 65%;
+            color: #ce7d88;
+            border: none;
+            border-bottom: 1px solid rgba(246, 246, 246, .5);
+            padding: 9px;
+            font-weight: 100;
+        }
+        input::placeholder{
+            color: #f6f6f6;
+            letter-spacing: 2px;
+            font-size: 1.0em;
+            font-weight: 100;
+        }
+        input:focus{
+            color: #ce7d88;
+            outline: none;
+            border-bottom: 1.2px solid rgba(206,125,136,.7);
+            font-size: 1.0em;
+            transition: 0.4s all ease;
+        }
+        input:focus::placeholder{
+            opacity: 0;
+        }
+        
+        label{
+            font-family: "Open Sans",sans-serif;
+            color: #ce7d88;
+            font-size: .8em;
+            letter-spacing: 1px;
+        }
+
+        .checkbox{
+            display: inline;
+            white-space: nowrap;
+            position: relative;
+            left: -12px;
+            top: 25px;
+        }
+
+        input[type=checkbox]{
+            width: 15px;
+            background: #ce7d88;
+        }
+        .checkbox input[type=checkbox]:hover + label{
+            color: #ce7d88;
+            transition: .5s all ease;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome">
+            <div class="pinkbox">
+                <!-- 注册 -->
+                <div class="signup nodisplay">
+                    <h1>Register</h1>
+                    <form autocapitalize="off">
+                        <input type="text" placeholder="Username">
+                        <input type="emall" placeholder="Emall">
+                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Confirm Password">
+                        <button class="button submit">Create Account</button>
+                    </form>
+                </div>
+                <!-- 登录 -->
+                <div class="signin">
+                    <h1>Sign In</h1>
+                    <form class="more-padding" autocapitalize="off">
+                        <input type="text" placeholder="Username">
+                        <input type="password" placeholder="Password">
+                        <div class="checkbox">
+                            <input type="checkbox" id="remember"><label for="remember">Remember Me</label>
+                        </div>
+                        <button class="button submit">Login</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="leftbox">
+                <h2 class="title"><span>BLOOM</span>&<br>BOUQUET</h2>
+                <p class="desc">Pick your perfect <span>bouquet</span></p>
+                <img class="flower smaller" src="../img/flower1.webp" >
+                <p class="account">Have an account?</p>
+                <button class="button" id="signin">Login</button>
+            </div>
+            <div class="rightbox">
+                <h2 class="title"><span>BLOOM</span>&<br>BOUQUET</h2>
+                <p class="desc">Pick your perfect <span>bouquet</span></p>
+                <img class="flower " src="../img/flower2.webp" >
+                <p class="account">Don't have an account?</p>
+                <button class="button" id="signup">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $('#signup').click(function() {
+            $('.pinkbox').css('transform', 'translateX(80%)');
+            $('.signin').addClass('nodisplay');
+            $('.signup').removeClass('nodisplay');
+        });
+
+        $('#signin').click(function() {
+            $('.pinkbox').css('transform', 'translateX(0%)');
+            $('.signup').addClass('nodisplay');
+            $('.signin').removeClass('nodisplay');
+        });
+    </script>
+</body>
+</html>
