@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      background: linear-gradient(#2b1055,#7597de) no-repeat;
+	    background-size: cover;
+      overflow-x: hidden;
+      /* margin: 0 100px; */
+      scroll-behavior: smooth;
+    }
+    .main{
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .main::before{
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(to top,#2b1055,transparent);
+      z-index: 1111;
+    }
+    .main div{
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    .main div img{
+      width: 100%;
+      height: 100%;
+    }
+    .stars{
+      z-index: -10;
+    }
+    .mot_b{
+      z-index: -9;
+    }
+    .mot_f{
+      z-index: 10;
+    }
+    .moon{
+      mix-blend-mode: screen;
+    }
+    .text{
+      color: #fff;
+      white-space: nowrap;
+      font-size: 7vw;
+      z-index: 9;
+      margin-left: 1300px;
+    }
+    .button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      padding: 8px 30px;
+      border-radius: 40px;
+      background: #fff;
+      color: #2b1055;
+      font-size: 1.5em;
+      z-index: 11;
+      cursor: pointer;
+      margin-bottom: 100px;
+      transform: translateY(100px);
+      transition: .3s;
+      border: 3px solid #fff;
+    }
+    .button:hover{
+      background: transparent;
+      border: 3px solid #2b1055;
+      font-size: 2em;
+      color: #fff;
+    }
+    .info{
+      position: relative;
+      padding: 100px;
+      background-color: #2b1055;
+      z-index: 9999;
+    }
+    .info h2{
+      font-size: 3.5em;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .info p{
+      font-size: 1.35em;
+      color: #fff;
+    }
+    </style>
+</head>
+<body>
+  <div class="main">
+    <div class="stars"><img src="../img/stars.png"></div>
+    <div class="moon"><img src="../img/moon.png"></div>
+    <div class="mot_f"><img src="../img/mountains_front.png"></div>
+    <h2 class="text">Moon Light </h2>
+    <a href="javascript:;" class="button">expore</a>
+    <div class="mot_b"><img src="../img/mountains_behind.png"></div>
+  </div>
+  <div class="info">
+    <h2>《You Have Only One Life》</h2>
+        <p>There are moments in life when you miss someone so much that you just want to pick them from your dreams and hug them for real! Dream what you want to dream;go where you want to go;be what you want to be,because you have only one life and one
+            chance to do all the things you want to do.<br/><br/> May you have enough happiness to make you sweet,enough trials to make you strong,enough sorrow to keep you human,enough hope to make you happy? Always put yourself in others’shoes.If you
+            feel that it hurts you,it probably hurts the other person, too.<br/><br/> The happiest of people don’t necessarily have the best of everything;they just make the most of everything that comes along their way.Happiness lies for those who cry,those
+            who hurt, those who have searched,and those who have tried,for only they can appreciate the importance of people.<br/><br/>who have touched their lives.Love begins with a smile,grows with a kiss and ends with a tear.The brightest future will
+            always be based on a forgotten past, you can’t go on well in lifeuntil you let go of your past failures and heartaches.When you were born,you were crying and everyone around you was smiling.Live your life so that when you die,you're the one
+            who is smiling and everyone around you is crying.<br/><br/>Please send this message to those people who mean something to you,to those who have touched your life in one way or another,to those who make you smile when you really need it,to
+            those that make you see the brighter side of things when you are really down,to those who you want to let them know that you appreciate their friendship.And if you don’t, don’t worry,nothing bad will happen to you,you will just miss out on
+            the opportunity to brighten someone’s day with this message.<br><br>There are moments in life when you miss someone so much that you just want to pick them from your dreams and hug them for real! Dream what you want to dream;go where you want
+            to go;be what you want to be,because you have only one life and one chance to do all the things you want to do.<br/><br/> May you have enough happiness to make you sweet,enough trials to make you strong,enough sorrow to keep you human,enough
+            hope to make you happy? Always put yourself in others’shoes.If you feel that it hurts you,it probably hurts the other person, too.<br/><br/>May you have enough happiness to make you sweet,enough trials to make you strong,enough sorrow to keep
+            you human,enough hope to make you happy? Always put yourself in others’shoes.If you feel that it hurts you,it probably hurts the other person, too.<br/><br/>
+  </div>
+  <script>
+    let stars = document.querySelector(".stars")
+    let moon = document.querySelector(".moon")
+    let mot_f = document.querySelector(".mot_f")
+    let text = document.querySelector(".text")
+    let mot_b = document.querySelector(".mot_b")
+    let info = document.querySelector(".info")
+    window.addEventListener('scroll',function(){
+      let value = window.scrollY;
+      stars.style.left = value * 0.5 + 'px'
+      moon.style.top = value * 1.5 + 'px'
+      mot_f.style.top = value * 0.5 + 'px'
+      mot_b.style.top = value * 0 + 'px'
+      text.style.marginRight = value * 4 + 'px'
+      text.style.marginTop = value * 1.5 + 'px'
+    })
+  </script>
+</body>
+</html>
