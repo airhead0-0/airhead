@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #fdf0ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .cup {
+  position: relative;
+}
+.container .cup .body {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to right, #F4ACB7, #f3d0d4);
+  border-bottom-right-radius: 40%;
+  border-bottom-left-radius: 40%;
+  box-shadow: -7px 6px 30px -10px rgba(0, 0, 0, 0.4);
+}
+.container .cup .body .circle {
+  position: absolute;
+  top: -30px;
+  width: 200px;
+  height: 60px;
+  border-radius: 50%;
+  border: 10px solid #e7bac1;
+  background: linear-gradient(to right, #facad1, #f3d0d4);
+  overflow: hidden;
+}
+.container .cup .body .circle .coffe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 15px;
+  border-radius: 50%;
+  background: linear-gradient(#c57e65, #e28462);
+}
+.container .cup .steam span {
+  position: absolute;
+  left: calc(var(--i) * 8px);
+  top: -50px;
+  width: calc(var(--i) * 1px);
+  height: 100px;
+  background-color: #fff;
+  animation: animate 5s linear calc(var(--i) * -0.5s) infinite;
+  opacity: 0;
+  z-index: 1;
+  border-radius: 50%;
+  filter: blur(7px);
+}
+@keyframes animate {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-150px) scaleX(5);
+  }
+  95% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.container .cup .handle {
+  position: absolute;
+  right: -55px;
+  top: 30px;
+  width: 130px;
+  height: 130px;
+  background-color: transparent;
+  border: 25px solid #facad1;
+  border-left: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-radius: 50%;
+  transform: rotate(48deg);
+  box-shadow: -7px 6px 30px -10px rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+.container .plate {
+  width: 300px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #dddadb, #ffffff);
+  position: absolute;
+  bottom: 75px;
+  box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+.container .plate::before {
+  content: '';
+  width: 220px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  background: linear-gradient(to right, #f0f0f0, #ffffff);
+  border-radius: 50%;
+}
