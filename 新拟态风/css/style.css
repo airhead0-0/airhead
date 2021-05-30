@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #efeeee;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .header {
+  display: flex;
+  cursor: pointer;
+  margin-top: 70px;
+  border-radius: 30px;
+  width: 500px;
+  height: 300px;
+  background: linear-gradient(to bottom, #edeff4, #efeeee);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1), -10px -10px 15px #ffffff;
+  transition: box-shadow 0.2s ease-in-out;
+}
+.container .header:hover {
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 0px 0px #ffffff, inset 10px 10px 15px rgba(0, 0, 0, 0.1), inset -10px -10px 15px #ffffff;
+  transition: box-shadow 0.2s ease-in-out;
+}
+.container .header .content {
+  display: flex;
+  align-items: center;
+}
+.container .header .content .img {
+  flex: 6;
+  width: 300px;
+  height: 300px;
+}
+.container .header .content .img img {
+  width: 100%;
+  height: 100%;
+}
+.container .header .content p {
+  flex: 3;
+  margin: 20px;
+  font-size: 20px;
+  line-height: 1.7;
+  font-weight: 500;
+  color: #b3bfd3;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1), -10px -10px 15px #ffffff;
+}
+.container .box {
+  display: flex;
+  margin-top: 30px;
+}
+.container .box .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+  margin: 50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 30px;
+  background: linear-gradient(to right bottom, #efeeee, #eff4f8);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1), -10px -10px 15px #ffffff;
+  transition: box-shadow 0.2s ease-in-out;
+}
+.container .box .content:hover {
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 0px 0px #ffffff, inset 10px 10px 15px rgba(0, 0, 0, 0.1), inset -10px -10px 15px #ffffff;
+  transition: box-shadow 0.2s ease-in-out;
+}
+.container .box .content .img {
+  width: 70px;
+  height: 70px;
+}
+.container .box .content .img img {
+  width: 100%;
+  height: 100%;
+  transition: 0.2s;
+}
+.container .box .content .img img:hover {
+  transform: scale(1.1);
+}
