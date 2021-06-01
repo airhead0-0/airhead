@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <div class="header w">
+    <div class="logo">
+      <a href="https://www.starbucks.com.cn/" target="_blank">
+        <img src="img/logo.png" alt="">
+      </a>
+    </div>
+    <div class="nav">
+      <ul>
+        <li><a href="javascript:;">Home</a></li>
+        <li><a href="javascript:;">Menu</a></li>
+        <li><a href="javascript:;">What's New</a></li>
+        <li><a href="javascript:;">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="body w">
+    <h1>It's not just Coffee</h1>
+    <h2>It's <span>Starbucks</span></h2>
+    <p>PERFECT SUMMER DELIGHTS
+      Embrace this blooming time of the year with vivid flavors from Starbucks summertime treats, all crafted in hues of the season.HAPPY HEDGEHOG COLLECTION
+      Join the adventure of hedgehog on a sunny day, playing around with cactus & sunflower in summer season.</p>
+    <div class="button">LEARN MORE</div>
+  </div>
+  <div class="right w">
+    <div class="img">
+      <img src="img/img1.png" alt="" id="img">
+    </div>
+  </div>
+  <div class="imgNav">
+    <ul>
+      <li><img src="img/img1.png" alt="" onclick="imgSlider('img/img1.png'); changeCircleColr('#017143')" ></li>
+      <li><img src="img/img2.png" alt="" onclick="imgSlider('img/img2.png'); changeCircleColr('#eb7495')" ></li>
+      <li><img src="img/img3.png" alt="" onclick="imgSlider('img/img3.png'); changeCircleColr('#d752b1')" ></li>
+    </ul>
+  </div>
+  <div class="icon">
+    <img src="img/微信 (1).png" alt="">
+    <img src="img/微博.png" alt="">
+    <img src="img/bilibili.png" alt="">
+  </div>
+  <div class="circle"></div>
+
+  <script>
+    function imgSlider(a){
+      document.querySelector('#img').src = a;
+    }
+    function changeCircleColr(color){
+      const circle = document.querySelector('.circle');
+      circlead.style.background = color
+    }
+  </script>
+</body>
+</html>
